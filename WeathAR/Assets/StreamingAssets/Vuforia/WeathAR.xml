@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
     <Tracking>
+        <ImageTarget name="bestaetigenController_front" size="500.000000 500.000000"/>
         <ImageTarget name="mecklenburgVorpommern_100" size="100.000000 104.415581"/>
         <ImageTarget name="sachsenAnhalt_100" size="100.000000 104.404144"/>
         <ImageTarget name="nordrheinWestfalen_100" size="100.000000 104.404144"/>
@@ -22,11 +23,11 @@
         <ImageTarget name="pixabay_barcode-306926_Barcode-Scanner" size="500.000000 333.333344"/>
         <ImageTarget name="flagge_saarland" size="100.000000 67.281105"/>
         <ImageTarget name="flagge_hamburg" size="100.000000 66.820274"/>
+        <ImageTarget name="controller.Back" size="50.000000 50.000000"/>
         <ImageTarget name="controller.Bottom" size="50.000000 50.000000"/>
         <ImageTarget name="controller.Left" size="50.000000 50.000000"/>
-        <ImageTarget name="controller.Right" size="50.000000 50.000000"/>
         <ImageTarget name="controller.Front" size="50.000000 50.000000"/>
-        <ImageTarget name="controller.Back" size="50.000000 50.000000"/>
+        <ImageTarget name="controller.Right" size="50.000000 50.000000"/>
         <ImageTarget name="controller.Top" size="50.000000 50.000000"/>
         <MultiTarget name="controller">
             <Part name="controller.Left" translation="-25.0 0 0" rotation="AD: 0 1 0 -90"/>
