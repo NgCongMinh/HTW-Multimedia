@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WeatherAPI : MonoBehaviour
 {
-
+	/*
 	private const string URL = "https://api.darksky.net/forecast/";
 	private const string API_KEY = "d1ae6e74c33884459cd2d21e13cb7329";
 	private double lat = 37.8267;
@@ -24,6 +24,7 @@ public class WeatherAPI : MonoBehaviour
 		yield return req;
 		responseText.text = req.text;
 	}
+	*/
 }
 
 

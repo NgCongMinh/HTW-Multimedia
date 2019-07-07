@@ -9,6 +9,9 @@ public class showWeather : MonoBehaviour
     private GameObject andereWetterdaten;     //vorherhige Wetterdaten / von anderem bundesland
 	private GameObject wetterdaten;
     private GameObject b1;
+
+    private string name;
+    private string name2;
 	//private bool selected = false;
     // Start is called before the first frame update
     void Start()
@@ -21,34 +24,27 @@ public class showWeather : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(andereWetterdaten != null){
+        Debug.Log(andereWetterdaten == null);
+        if(andereWetterdaten != null && andereWetterdaten != wetterdaten){
             andereWetterdaten.GetComponent<switchDay>().Reset();
             andereWetterdaten.SetActive(false);
         }
-        andereWetterdaten = wetterdaten;
-        wetterdaten.SetActive(true);
-        b1.SetActive(true);
-
-  
+            andereWetterdaten = wetterdaten;
+            wetterdaten.SetActive(true);
+            b1.SetActive(true);
     }
 
     void OnTriggerEnter(Collider col){
+        //Debug.Log(andereWetterdaten == null);
     	if(col.tag == "Marker"){
             wetterdaten = col.transform.Find("Wetterdaten").gameObject;
             b1 = col.transform.Find("switch_button_forward").gameObject;
     		//selected = true;
     	}
-
     }
 
-    /*
+    
     void OnTriggerExit(Collider col){
-    	if(col.tag == "Marker"){
-    		selected = false;
-
-    		Debug.Log("y");
-    	}
 
     }
-    */
 }
