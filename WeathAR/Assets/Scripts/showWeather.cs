@@ -6,45 +6,39 @@ using UnityEngine;
 
 public class showWeather : MonoBehaviour
 {
-    private GameObject andereWetterdaten;     //vorherhige Wetterdaten / von anderem bundesland
-	private GameObject wetterdaten;
+	private GameObject collided;
+    private GameObject wetterdaten;
     private GameObject b1;
+    private SwitchDay skript;
 
-    private string name;
-    private string name2;
-	//private bool selected = false;
-    // Start is called before the first frame update
+
     void Start()
     {
-        andereWetterdaten = null;
+        collided = null;
         wetterdaten = null;
         b1 = null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(andereWetterdaten == null);
-        if(andereWetterdaten != null && andereWetterdaten != wetterdaten){
-            andereWetterdaten.GetComponent<switchDay>().Reset();
-            andereWetterdaten.SetActive(false);
-        }
-            andereWetterdaten = wetterdaten;
-            wetterdaten.SetActive(true);
-            b1.SetActive(true);
+        skript = null;
     }
 
     void OnTriggerEnter(Collider col){
-        //Debug.Log(andereWetterdaten == null);
     	if(col.tag == "Marker"){
+                if(wetterdaten != null){
+                    skript = (SwitchDay) collided.GetComponent(typeof(SwitchDay));
+                    skript.Reset();
+                    wetterdaten.SetActive(false);
+                }
+            collided = col.transform.gameObject;
             wetterdaten = col.transform.Find("Wetterdaten").gameObject;
             b1 = col.transform.Find("switch_button_forward").gameObject;
-    		//selected = true;
+
+                wetterdaten.SetActive(true);
+                b1.SetActive(true);
+                return;
     	}
+        return;
     }
 
     
     void OnTriggerExit(Collider col){
-
     }
 }
