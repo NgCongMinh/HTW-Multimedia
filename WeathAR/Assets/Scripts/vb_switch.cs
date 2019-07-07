@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-/*
+
 public class vb_switch : MonoBehaviour, IVirtualButtonEventHandler
 {
 	VirtualButtonBehaviour[] virtualButtonBehaviours;
 	string vbName;
     // Start is called before the first frame update
 
-	public GameObject firstPanel, secondPanel;
+	//public GameObject firstPanel, secondPanel;
 
     void Start()
     {
@@ -23,11 +23,14 @@ public class vb_switch : MonoBehaviour, IVirtualButtonEventHandler
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
     {
-    	vb = vb.VirtualButtonName;
+    	vbName = vb.VirtualButtonName;
 
-    	if(vbName == "VirtualButtonChange"){
-    		VirtualButtonChange();
+    	if(vbName == "switch_button"){
+    		Debug.Log("switch_button");
     	}
+        if(vbName == "switch_button_zurueck"){
+            Debug.Log("switch_button_zurueck");
+        }
     }
 
 
@@ -36,10 +39,4 @@ public class vb_switch : MonoBehaviour, IVirtualButtonEventHandler
 
     }
 
-    void VirtualButtonChange()
-    {
-
-    }
-
 }
-*/
