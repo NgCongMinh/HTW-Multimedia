@@ -67,8 +67,8 @@ namespace Network
         {
             return new WeatherReport
             {
-                date = json["date"].ToString(),
-                location = json["location"].ToString(),
+                date = json["date"].str,
+                location = json["location"].str,
                 data = ConvertToOverview(json["data"])
             };
         }
@@ -107,11 +107,11 @@ namespace Network
             weatherData.temperature = result;
 
             DayTime dayTime;
-            Enum.TryParse(json["dayTime"].ToString(), true, out dayTime);
+            Enum.TryParse(json["dayTime"].str, true, out dayTime);
             weatherData.dayTime = dayTime;
 
             WeatherPhenomena phenomena;
-            Enum.TryParse(json["phenomena"].ToString(), true, out phenomena);
+            Enum.TryParse(json["phenomena"].str, true, out phenomena);
             weatherData.phenomena = phenomena;
 
             return weatherData;

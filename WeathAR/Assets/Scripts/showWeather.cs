@@ -1,22 +1,25 @@
-﻿using System;
+﻿using DefaultNamespace;
 using Model;
 using Network;
 using TMPro;
 using UnityEngine;
-using Object = System.Object;
 
 public class ShowWeather : MonoBehaviour
 {
-    public WeatherApiClient weatherClient;
+    private WeatherApiClient weatherClient;
 
     private GameObject collided;
 
     // Prefab
     private GameObject weatherDataContainer;
 
+    private Identifier identifier;
+
     private GameObject b1;
 
     private SwitchDay skript;
+
+    private DayType dayType;
 
     public void Start()
     {
@@ -41,28 +44,47 @@ public class ShowWeather : MonoBehaviour
 
             collided = col.transform.gameObject;
             weatherDataContainer = col.transform.Find("Wetterdaten").gameObject;
+            identifier = weatherDataContainer.GetComponent<Identifier>();
             b1 = col.transform.Find("switch_button_forward").gameObject;
 
             weatherDataContainer.SetActive(true);
-            InsertWeatherData();
             b1.SetActive(true);
-            return;
         }
+    }
 
-        return;
+    public void UpdateView(DayType dt)
+    {
+        this.dayType = dt;
+        InsertWeatherData();
     }
 
     private void InsertWeatherData()
     {
-        weatherClient.GetWeather("berlin", HandleResponse);
+        weatherClient.GetWeather(identifier.city.ToLower(), HandleResponse);
     }
 
     private void HandleResponse(WeatherForecast weatherForecast)
     {
-        WeatherReport today = weatherForecast.today;
-        foreach (DayTime dayTime in today.data.Keys)
+        WeatherReport weatherReport;
+        switch (dayType)
         {
-            WeatherData weatherData = today.data[dayTime];
+            case DayType.Today:
+                weatherReport = weatherForecast.today;
+                break;
+            case DayType.Tomorrow:
+                weatherReport = weatherForecast.tomorrow;
+                break;
+            case DayType.DayAfterTomorrow:
+                weatherReport = weatherForecast.dayAfterTomorrow;
+                break;
+            default:
+                weatherReport = null;
+                break;
+        }
+
+        foreach (DayTime dayTime in weatherReport.data.Keys)
+        {
+            WeatherData weatherData = weatherReport.data[dayTime];
 
             string temperatureComponentName = null;
             string phenomenaComponentName = null;
@@ -84,13 +106,10 @@ public class ShowWeather : MonoBehaviour
                     temperatureComponentName = "NightTemperature";
                     phenomenaComponentName = "NightPhenomena";
                     break;
-                default:
-                    // TODO
-                    break;
             }
 
             // temperature
-            SetText(String.Format("{0:0.00}", weatherData.temperature), temperatureComponentName);
+            SetTemperature(weatherData.temperature, temperatureComponentName);
 
             // weather phenomena
             Material material = WeatherPhenomenaMapper.GetWeatherMaterial(weatherData.phenomena);
@@ -100,14 +119,15 @@ public class ShowWeather : MonoBehaviour
         }
     }
 
-    private void SetText(Object text, string componentName)
+    private void SetTemperature(double temperature, string componentName)
+    {
+        SetText(string.Format("{0:0.00}", temperature) + "°C", componentName);
+    }
+
+    private void SetText(object text, string componentName)
     {
         Transform textComponent = weatherDataContainer.transform.Find(componentName);
         TextMeshPro txt = textComponent.GetComponent<TextMeshPro>();
         txt.text = text.ToString();
-    }
-
-    void OnTriggerExit(Collider col)
-    {
     }
 }

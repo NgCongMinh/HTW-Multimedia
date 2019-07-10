@@ -1,9 +1,17 @@
-﻿using TMPro;
+﻿using Model;
+using TMPro;
 using UnityEngine;
 
 public class SwitchDay : MonoBehaviour
 {
     public TextMeshPro tag;
+
+    private ShowWeather showWeather;
+
+    public void Start()
+    {
+        showWeather = GameObject.Find("Pointer").GetComponent<ShowWeather>();
+    }
 
     public void SwitchForward()
     {
@@ -11,6 +19,7 @@ public class SwitchDay : MonoBehaviour
         {
             tag.text = "Morgen";
             this.transform.Find("switch_button_backward").gameObject.SetActive(true);
+            Notify(DayType.Tomorrow);
             return;
         }
 
@@ -18,6 +27,7 @@ public class SwitchDay : MonoBehaviour
         {
             tag.text = "Übermorgen";
             this.transform.Find("switch_button_forward").gameObject.SetActive(false);
+            Notify(DayType.DayAfterTomorrow);
             return;
         }
     }
@@ -28,6 +38,7 @@ public class SwitchDay : MonoBehaviour
         {
             tag.text = "Morgen";
             this.transform.Find("switch_button_forward").gameObject.SetActive(true);
+            Notify(DayType.Tomorrow);
             return;
         }
 
@@ -35,6 +46,7 @@ public class SwitchDay : MonoBehaviour
         {
             tag.text = "Heute";
             this.transform.Find("switch_button_backward").gameObject.SetActive(false);
+            Notify(DayType.Today);
             return;
         }
     }
@@ -44,5 +56,11 @@ public class SwitchDay : MonoBehaviour
         tag.text = "Heute";
         this.transform.Find("switch_button_forward").gameObject.SetActive(false);
         this.transform.Find("switch_button_backward").gameObject.SetActive(false);
+        Notify(DayType.Today);
+    }
+
+    private void Notify(DayType dayType)
+    {
+        showWeather.UpdateView(dayType);
     }
 }
