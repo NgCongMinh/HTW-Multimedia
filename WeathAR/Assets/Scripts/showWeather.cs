@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using System;
+using Model;
 using Network;
 using TMPro;
 using UnityEngine;
@@ -63,30 +64,38 @@ public class ShowWeather : MonoBehaviour
         {
             WeatherData weatherData = today.data[dayTime];
 
-            string componentName = null;
+            string temperatureComponentName = null;
+            string phenomenaComponentName = null;
             switch (dayTime)
             {
                 case DayTime.MORNING:
-                    componentName = "MorningTemperature";
+                    temperatureComponentName = "MorningTemperature";
+                    phenomenaComponentName = "MorningPhenomena";
                     break;
                 case DayTime.NOON:
-                    componentName = "NoonTemperature";
-                    break;
-                case DayTime.NIGHT:
-                    componentName = "EveningTemperature";
+                    temperatureComponentName = "NoonTemperature";
+                    phenomenaComponentName = "NoonPhenomena";
                     break;
                 case DayTime.EVENING:
-                    componentName = "NightTemperature";
+                    temperatureComponentName = "EveningTemperature";
+                    phenomenaComponentName = "EveningPhenomena";
+                    break;
+                case DayTime.NIGHT:
+                    temperatureComponentName = "NightTemperature";
+                    phenomenaComponentName = "NightPhenomena";
                     break;
                 default:
                     // TODO
                     break;
             }
 
-            SetText(weatherData.temperature, componentName);
-            
-            Material material = Resources.Load("Materials/schnee.mat", typeof(Material)) as Material;
-            Transform phenomenaComponent = weatherDataContainer.transform.Find("MorningPhenomena");
+            // temperature
+            SetText(String.Format("{0:0.00}", weatherData.temperature), temperatureComponentName);
+
+            // weather phenomena
+            Material material = WeatherPhenomenaMapper.GetWeatherMaterial(weatherData.phenomena);
+
+            Transform phenomenaComponent = weatherDataContainer.transform.Find(phenomenaComponentName);
             phenomenaComponent.GetComponent<MeshRenderer>().material = material;
         }
     }
@@ -96,7 +105,7 @@ public class ShowWeather : MonoBehaviour
         Transform textComponent = weatherDataContainer.transform.Find(componentName);
         TextMeshPro txt = textComponent.GetComponent<TextMeshPro>();
         txt.text = text.ToString();
-    } 
+    }
 
     void OnTriggerExit(Collider col)
     {

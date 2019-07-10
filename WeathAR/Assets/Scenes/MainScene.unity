@@ -4745,6 +4745,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8477454249728268717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &805789743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1279911375}
+    m_Modifications:
+    - target: {fileID: 3346500988549391205, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_Name
+      value: EveningPhenomena (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346500988549391225, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -173.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346500988549391225, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346500988549391225, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346500988549391225, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346500988549391225, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346500988549391225, guid: 6f3be04253166474cbda38b1cd157625,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f3be04253166474cbda38b1cd157625, type: 3}
 --- !u!4 &842612075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1205249310417074685, guid: 7430879a2e499427c971ebcd05c816bc,
@@ -6011,6 +6055,12 @@ Material:
     m_Floats: []
     m_Colors:
     - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+--- !u!4 &1279911375 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1358335942843698694, guid: ccc4134a4a63b4643a4485d9c65cad98,
+    type: 3}
+  m_PrefabInstance: {fileID: 5637402233677910463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1281887015
 Material:
   serializedVersion: 6

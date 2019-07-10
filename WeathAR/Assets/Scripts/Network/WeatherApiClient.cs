@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Model;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -89,7 +90,21 @@ namespace Network
         {
             WeatherData weatherData = new WeatherData();
 
-            weatherData.temperature = double.Parse(json["temperature"].ToString());
+            double result;
+            string temp = json["temperature"].str.Replace(".", ",");
+
+            //Try parsing in the current culture
+            if (!double.TryParse(temp, NumberStyles.Any, CultureInfo.CurrentCulture, out result) &&
+                //Then try in US english
+                !double.TryParse(temp, NumberStyles.Any, CultureInfo.GetCultureInfo("en-US"),
+                    out result) &&
+                //Then in neutral language
+                !double.TryParse(temp, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
+            {
+                result = 0.0;
+            }
+
+            weatherData.temperature = result;
 
             DayTime dayTime;
             Enum.TryParse(json["dayTime"].ToString(), true, out dayTime);
