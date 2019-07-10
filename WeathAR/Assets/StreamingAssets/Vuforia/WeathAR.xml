@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
     <Tracking>
+        <ImageTarget name="thueringen" size="100.000000 100.000000"/>
+        <ImageTarget name="schleswigHolstein" size="100.000000 100.000000"/>
+        <ImageTarget name="sachsenAnhalt" size="100.000000 100.000000"/>
+        <ImageTarget name="sachsen" size="100.000000 100.000000"/>
+        <ImageTarget name="saarland" size="100.000000 100.000000"/>
+        <ImageTarget name="rheinlandPfalz" size="100.000000 100.000000"/>
+        <ImageTarget name="nordrheinWestfalen" size="100.000000 100.000000"/>
+        <ImageTarget name="niedersachsen" size="100.000000 100.000000"/>
+        <ImageTarget name="mecklenburgVorpommern" size="100.000000 100.000000"/>
+        <ImageTarget name="hessen" size="100.000000 100.000000"/>
+        <ImageTarget name="hamburg" size="100.000000 100.000000"/>
+        <ImageTarget name="bremen" size="100.000000 100.000000"/>
+        <ImageTarget name="brandenburg" size="100.000000 100.000000"/>
+        <ImageTarget name="berlin" size="100.000000 100.000000"/>
+        <ImageTarget name="bayern" size="100.000000 100.000000"/>
+        <ImageTarget name="badenwuerttemberg" size="100.000000 100.000000"/>
+        <ImageTarget name="top2" size="100.000000 100.000000"/>
+        <ImageTarget name="right2" size="100.000000 100.000000"/>
+        <ImageTarget name="left2" size="100.000000 100.000000"/>
+        <ImageTarget name="front2" size="100.000000 100.000000"/>
+        <ImageTarget name="bottom2" size="100.000000 100.000000"/>
+        <ImageTarget name="back2" size="100.000000 100.000000"/>
         <ImageTarget name="bestaetigenController_front" size="500.000000 500.000000"/>
         <ImageTarget name="mecklenburgVorpommern_100" size="100.000000 104.415581"/>
         <ImageTarget name="sachsenAnhalt_100" size="100.000000 104.404144"/>
@@ -23,12 +45,26 @@
         <ImageTarget name="pixabay_barcode-306926_Barcode-Scanner" size="500.000000 333.333344"/>
         <ImageTarget name="flagge_saarland" size="100.000000 67.281105"/>
         <ImageTarget name="flagge_hamburg" size="100.000000 66.820274"/>
-        <ImageTarget name="controller.Back" size="50.000000 50.000000"/>
-        <ImageTarget name="controller.Bottom" size="50.000000 50.000000"/>
+        <ImageTarget name="controller2.Left" size="100.000000 100.000000"/>
+        <ImageTarget name="controller2.Bottom" size="100.000000 100.000000"/>
+        <ImageTarget name="controller2.Top" size="100.000000 100.000000"/>
+        <ImageTarget name="controller2.Back" size="100.000000 100.000000"/>
+        <ImageTarget name="controller2.Right" size="100.000000 100.000000"/>
+        <ImageTarget name="controller2.Front" size="100.000000 100.000000"/>
         <ImageTarget name="controller.Left" size="50.000000 50.000000"/>
-        <ImageTarget name="controller.Front" size="50.000000 50.000000"/>
-        <ImageTarget name="controller.Right" size="50.000000 50.000000"/>
+        <ImageTarget name="controller.Bottom" size="50.000000 50.000000"/>
         <ImageTarget name="controller.Top" size="50.000000 50.000000"/>
+        <ImageTarget name="controller.Back" size="50.000000 50.000000"/>
+        <ImageTarget name="controller.Right" size="50.000000 50.000000"/>
+        <ImageTarget name="controller.Front" size="50.000000 50.000000"/>
+        <MultiTarget name="controller2">
+            <Part name="controller2.Left" translation="-50.0 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="controller2.Right" translation="50.0 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="controller2.Front" translation="0 0 50.0" rotation="AD: 1 0 0 0"/>
+            <Part name="controller2.Back" translation="0 0 -50.0" rotation="AD: 0 1 0 180"/>
+            <Part name="controller2.Top" translation="0 50.0 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="controller2.Bottom" translation="0 -50.0 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
         <MultiTarget name="controller">
             <Part name="controller.Left" translation="-25.0 0 0" rotation="AD: 0 1 0 -90"/>
             <Part name="controller.Right" translation="25.0 0 0" rotation="AD: 0 1 0 90"/>
