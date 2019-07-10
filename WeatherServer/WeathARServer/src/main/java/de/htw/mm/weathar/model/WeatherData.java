@@ -2,17 +2,17 @@ package de.htw.mm.weathar.model;
 
 public class WeatherData {
 
-    private Double temperature;
+    private String temperature;
 
     private DayTime dayTime;
 
     private WeatherPhenomena phenomena;
 
-    public Double getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(Double temperature) {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 

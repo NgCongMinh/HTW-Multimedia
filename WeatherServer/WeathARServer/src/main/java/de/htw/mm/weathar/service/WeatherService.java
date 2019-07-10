@@ -115,7 +115,7 @@ public class WeatherService {
         WeatherData data = new WeatherData();
         data.setPhenomena(getWeatherPhenomena(dailyDataPoint.getIcon()));
         data.setDayTime(dayTime);
-        data.setTemperature(dailyDataPoint.getTemperature());
+        data.setTemperature(dailyDataPoint.getTemperature().toString());
         return data;
     }
 
