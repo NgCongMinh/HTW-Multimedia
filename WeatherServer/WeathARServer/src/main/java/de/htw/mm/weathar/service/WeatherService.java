@@ -103,9 +103,12 @@ public class WeatherService {
             }
         }
 
+        String timezone = forecast.getTimezone();
+        String location = timezone.contains("/") ? timezone.substring(timezone.indexOf("/") + 1) : timezone;
+
         WeatherReport weatherReport = new WeatherReport();
         weatherReport.setData(data);
-        weatherReport.setLocation(forecast.getTimezone());
+        weatherReport.setLocation(location);
         weatherReport.setDate(dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 
         return weatherReport;
