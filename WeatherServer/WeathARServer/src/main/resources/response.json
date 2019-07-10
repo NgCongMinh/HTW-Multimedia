@@ -1,0 +1,82 @@
+{
+  "data": {
+    "today": {
+      "date": "09/07/2019",
+      "location": "Europe/Berlin",
+      "data": {
+        "EVENING": {
+          "temperature": 18.25,
+          "dayTime": "EVENING",
+          "phenomena": "CLOUDY"
+        },
+        "NIGHT": {
+          "temperature": 17.12,
+          "dayTime": "NIGHT",
+          "phenomena": "CLOUDY"
+        },
+        "NOON": {
+          "temperature": 15.5,
+          "dayTime": "NOON",
+          "phenomena": "CLOUDY"
+        },
+        "MORNING": {
+          "temperature": 13.05,
+          "dayTime": "MORNING",
+          "phenomena": "CLOUDY"
+        }
+      }
+    },
+    "tomorrow": {
+      "date": "10/07/2019",
+      "location": "Europe/Berlin",
+      "data": {
+        "EVENING": {
+          "temperature": 20.95,
+          "dayTime": "EVENING",
+          "phenomena": "CLOUDY"
+        },
+        "NIGHT": {
+          "temperature": 20.13,
+          "dayTime": "NIGHT",
+          "phenomena": "CLOUDY"
+        },
+        "NOON": {
+          "temperature": 17.45,
+          "dayTime": "NOON",
+          "phenomena": "CLOUDY"
+        },
+        "MORNING": {
+          "temperature": 12.3,
+          "dayTime": "MORNING",
+          "phenomena": "CLOUDY"
+        }
+      }
+    },
+    "dayAfterTomorrow": {
+      "date": "11/07/2019",
+      "location": "Europe/Berlin",
+      "data": {
+        "EVENING": {
+          "temperature": 22.0,
+          "dayTime": "EVENING",
+          "phenomena": "CLOUDY"
+        },
+        "NIGHT": {
+          "temperature": 20.44,
+          "dayTime": "NIGHT",
+          "phenomena": "CLOUDY"
+        },
+        "NOON": {
+          "temperature": 20.95,
+          "dayTime": "NOON",
+          "phenomena": "CLOUDY"
+        },
+        "MORNING": {
+          "temperature": 14.32,
+          "dayTime": "MORNING",
+          "phenomena": "CLOUDY"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package de.htw.mm.weathar.controller;
 
+import de.htw.mm.weathar.model.GermanCity;
 import de.htw.mm.weathar.model.JsonResponse;
 import de.htw.mm.weathar.model.WeatherForecast;
 import de.htw.mm.weathar.model.error.NotDefinedException;
@@ -25,7 +26,13 @@ public class WeatherController {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<JsonResponse> getWeather(@RequestParam("city") String city) throws ForecastException, NotDefinedException {
-        WeatherForecast weatherForecast = service.getWeather(city);
+
+        GermanCity germanCity = GermanCity.getCity(city);
+        if (germanCity == null) {
+            throw new NotDefinedException("City " + city + " is not defined.");
+        }
+
+        WeatherForecast weatherForecast = service.getWeather(germanCity);
         return new ResponseEntity<>(new JsonResponse(weatherForecast), HttpStatus.OK);
     }
 

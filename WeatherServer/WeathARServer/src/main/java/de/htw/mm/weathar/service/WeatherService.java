@@ -1,7 +1,6 @@
 package de.htw.mm.weathar.service;
 
 import de.htw.mm.weathar.model.*;
-import de.htw.mm.weathar.model.error.NotDefinedException;
 import org.springframework.stereotype.Service;
 import tk.plogitech.darksky.api.jackson.DarkSkyJacksonClient;
 import tk.plogitech.darksky.forecast.*;
@@ -20,15 +19,9 @@ public class WeatherService {
 
     private static final String DARK_SKY_AUTH_KEY = "d1ae6e74c33884459cd2d21e13cb7329";
 
-    public WeatherForecast getWeather(String city) throws ForecastException, NotDefinedException {
-
-        GermanCity germanCity = GermanCity.getCity(city);
-        if (germanCity == null) {
-            throw new NotDefinedException("City " + city + " is not defined.");
-        }
-
-        Double longitude = germanCity.getLongitude();
-        Double latitude = germanCity.getLatitude();
+    public WeatherForecast getWeather(GermanCity city) throws ForecastException {
+        Double longitude = city.getLongitude();
+        Double latitude = city.getLatitude();
 
         Instant today = Instant.now();
         Forecast todayForecast = requestDarkSky(
