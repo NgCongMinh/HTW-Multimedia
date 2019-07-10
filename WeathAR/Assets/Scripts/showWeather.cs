@@ -3,6 +3,7 @@ using Model;
 using Network;
 using TMPro;
 using UnityEngine;
+using Util;
 
 public class ShowWeather : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class ShowWeather : MonoBehaviour
 
     public void UpdateView(DayType dt)
     {
-        this.dayType = dt;
+        dayType = dt;
         InsertWeatherData();
     }
 
@@ -121,7 +122,15 @@ public class ShowWeather : MonoBehaviour
 
     private void SetTemperature(double temperature, string componentName)
     {
-        SetText(string.Format("{0:0.00}", temperature) + "°C", componentName);
+        if (Settings.temperatureUnit == TemperatureUnit.Fahrenheit)
+        {
+            double temp = TemperatureConverter.ToFahrenheit(temperature);
+            SetText(string.Format("{0:0.00}", temp) + "°F", componentName);
+        }
+        else
+        {
+            SetText(string.Format("{0:0.00}", temperature) + "°C", componentName);
+        }
     }
 
     private void SetText(object text, string componentName)
