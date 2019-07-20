@@ -7,6 +7,7 @@ using UnityEngine.UI;
  *
  * @author Max Shakurov, Cong Minh Nguyen
  * @date 20.07.2019
+ * @link <https://github.com/Kalxoznik/Unity-Toggle-controller> <Unity-Toggle-controller> @endlink
  */
 namespace Menu
 {

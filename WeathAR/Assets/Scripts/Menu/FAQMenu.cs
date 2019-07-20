@@ -1,12 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class FAQMenu : MonoBehaviour
+namespace Menu
 {
-	public void OpenMenu(){
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-	}
+    /**
+     * Handles logic for the FAQ menu component.
+     *
+     * @author Cong Minh Nguyen, Tuan Tung Tran
+     * @date 20.07.2019
+     *
+     */
+    public class FAQMenu : MonoBehaviour
+    {
+        /**
+         * Opens the menu scene.
+         */
+        public void OpenMenu()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
 }

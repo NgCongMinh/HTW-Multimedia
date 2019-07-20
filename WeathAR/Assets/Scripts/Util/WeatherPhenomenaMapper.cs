@@ -1,9 +1,22 @@
+using Model;
 using UnityEngine;
 
-namespace Model
+namespace Util
 {
-    public class WeatherPhenomenaMapper
+    /**
+     * Util class which converts the WeatherPhenomena to a readable text.
+     *
+     * @author Cong Minh Nguyen, Tuan Tung Tran
+     * @date 20.07.2019
+     * 
+     */
+    public static class WeatherPhenomenaMapper
     {
+        /**
+         * Converts the given phenomena to a readable text.
+         * 
+         * @param[in] col collider object
+         */
         public static Material GetWeatherMaterial(WeatherPhenomena phenomena)
         {
             switch (phenomena)

@@ -4,12 +4,23 @@ using UnityEngine;
 
 namespace Controller
 {
+    /**
+     * Handles logic for the buttons in the weather container.
+     *
+     * @author Cong Minh Nguyen, Tuan Tung Tran
+     * @date 20.07.2019
+     */
     public class WeatherContainerButtonController : MonoBehaviour
     {
         private DayType currentDayType;
 
         private Action<DayType> callback;
 
+        /**
+         * Bind the given callback to the system.
+         *
+         * @param[in] callback callback function which handles the changes of the day type
+         */
         public void Bind(Action<DayType> callback)
         {
             ResetValues();
@@ -23,6 +34,9 @@ namespace Controller
             currentDayType = DayType.Today;
         }
 
+        /**
+         * Switch forward.
+         */
         public void SwitchForward()
         {
             DayType nextDayType;
@@ -47,6 +61,9 @@ namespace Controller
             }
         }
 
+        /**
+         * Switch backward.
+         */
         public void SwitchBackward()
         {
             DayType previousDayType;

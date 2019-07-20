@@ -6,6 +6,12 @@ using Util;
 
 namespace Controller
 {
+    /**
+     * Handles logic for an image target component which holds a marker for Vuforia.
+     *
+     * @author Cong Minh Nguyen, Tuan Tung Tran
+     * @date 20.07.2019
+     */
     public class TargetController : MonoBehaviour
     {
         private WeatherApiClient weatherClient;
@@ -25,6 +31,11 @@ namespace Controller
             weatherClient = GameObject.Find("WeatherApiClient").GetComponent<WeatherApiClient>();
         }
 
+        /**
+         * Registers the given target to the system.
+         *
+         * @param[in] target gameObject which holds all component relevant for the app
+         */
         public void Register(GameObject target)
         {
             UnregisterPreviousListener();
@@ -83,11 +94,11 @@ namespace Controller
                     weatherReport = null;
                     break;
             }
-            
+
             // bug by DarkSky
             // location
             //SetLocation(weatherReport.location);
-                
+
             // day type
             SetDayTypeLabel(currentDayType);
 

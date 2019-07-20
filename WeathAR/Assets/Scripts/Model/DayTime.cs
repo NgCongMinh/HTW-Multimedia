@@ -2,6 +2,12 @@ using System;
 
 namespace Model
 {
+    /**
+     * Representation of specific times of a day.
+     *
+     * @author Cong Minh Nguyen, Tuan Tung Tran
+     * @date 20.07.2019
+     */
     [Serializable]
     public enum DayTime
     {

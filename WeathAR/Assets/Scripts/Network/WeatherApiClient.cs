@@ -8,6 +8,14 @@ using UnityEngine.Networking;
 
 namespace Network
 {
+    
+    /**
+     * API Client which communicates to the custom weather api.
+     *
+     * @author Cong Minh Nguyen, Tuan Tung Tran
+     * @date 20.07.2019
+     * 
+     */
     public class WeatherApiClient : MonoBehaviour
     {
         private const string Url = "http://localhost:8080";
@@ -21,6 +29,10 @@ namespace Network
             cache = new Dictionary<string, WeatherForecast>();
         }
 
+        /**
+         * @param[in] city city to request the weather data from
+         * @param[in] callback callback handles the response accordingly
+         */
         public void GetWeather(string city, Action<WeatherForecast> callback)
         {
             StartCoroutine(RequestRoutine(Url + WeatherPath + "?city=", city, callback));
@@ -92,7 +104,11 @@ namespace Network
 
             double result;
             string temp = json["temperature"].str.Replace(".", ",");
-
+            
+            // CAUTION for iOS
+            //string temp = json["temperature"].str;
+            
+            
             //Try parsing in the current culture
             if (!double.TryParse(temp, NumberStyles.Any, CultureInfo.CurrentCulture, out result) &&
                 //Then try in US english
