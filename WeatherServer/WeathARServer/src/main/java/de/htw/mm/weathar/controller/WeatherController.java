@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import tk.plogitech.darksky.forecast.ForecastException;
 
+/**
+ * API endpoint /weather.
+ *
+ * @author Cong Minh Nguyen, Tuan Tung Tran
+ * @date 20.07.2019
+ */
 @Controller
 @RequestMapping("weather")
 public class WeatherController {
@@ -22,6 +28,13 @@ public class WeatherController {
     @Autowired
     private WeatherService service;
 
+    /**
+     * Returns a response which contains the weather data for the given city.
+     * @param city  weather data for the requested city
+     * @return response which contains the weather data
+     * @throws ForecastException failed to request dark sky api
+     * @throws NotDefinedException given city is not defined
+     */
     @RequestMapping(
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

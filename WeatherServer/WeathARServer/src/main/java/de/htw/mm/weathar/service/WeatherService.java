@@ -14,11 +14,24 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Service layer which handles the logic concerning the weather requests.
+ *
+ * @author Cong Minh Nguyen, Tuan Tung Tran
+ * @date 20.07.2019
+ */
 @Service
 public class WeatherService {
 
     private static final String DARK_SKY_AUTH_KEY = "d1ae6e74c33884459cd2d21e13cb7329";
 
+    /**
+     * Returns a custom wrapper object that contains the weather data.
+     *
+     * @param city city
+     * @return weather data container
+     * @throws ForecastException failed to request dark sky api
+     */
     public WeatherForecast getWeather(GermanCity city) throws ForecastException {
         Double longitude = city.getLongitude();
         Double latitude = city.getLatitude();
