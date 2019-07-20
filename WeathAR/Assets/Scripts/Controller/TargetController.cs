@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using Model;
 using Network;
 using TMPro;
@@ -85,8 +84,9 @@ namespace Controller
                     break;
             }
             
+            // bug by DarkSky
             // location
-            SetLocation(weatherReport.location);
+            //SetLocation(weatherReport.location);
                 
             // day type
             SetDayTypeLabel(currentDayType);

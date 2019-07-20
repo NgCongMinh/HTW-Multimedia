@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Model
 {
     public class Identifier : MonoBehaviour
     {

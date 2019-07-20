@@ -182,7 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f02764279b54872b75dfa6ae4cd8aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayTimeLabel: {fileID: 6597693604962611268}
 --- !u!1001 &534348639106361544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,18 +547,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 534348639106361544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6597693604962611268 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6693989660303841420, guid: 1570080d18feb4fcfb941bf4ff9280fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 534348639106361544}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &534348639138250313
 PrefabInstance:
   m_ObjectHideFlags: 0

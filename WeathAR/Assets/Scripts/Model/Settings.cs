@@ -1,6 +1,4 @@
-using Model;
-
-namespace DefaultNamespace
+namespace Model
 {
     public static class Settings
     {
