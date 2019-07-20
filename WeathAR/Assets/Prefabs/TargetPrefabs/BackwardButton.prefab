@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 9142499704828383649}
   - component: {fileID: 7770175381741024622}
   - component: {fileID: 4690272304608724724}
-  - component: {fileID: 1148217376632561065}
   m_Layer: 5
-  m_Name: switch_button_backward
+  m_Name: BackwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,18 +99,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1148217376632561065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785567384776122502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4476df8432bce49bf87143190645f479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7064414924145215034
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +305,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SwitchBackward
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

@@ -2142,10 +2142,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6693989661388947659}
-  - component: {fileID: -3627481125534011273}
   - component: {fileID: 2348327384163536379}
   m_Layer: 0
-  m_Name: Wetterdaten
+  m_Name: WeatherDataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2180,18 +2179,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &-3627481125534011273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693989661388947656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4476df8432bce49bf87143190645f479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2348327384163536379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbae7adf1f5540a7a93c8c203f1efbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  city: 
 --- !u!1001 &884683736746498169
 PrefabInstance:
   m_ObjectHideFlags: 0
